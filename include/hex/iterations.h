@@ -40,6 +40,7 @@ namespace hex
     template <typename Container>
     typename Container::value_type iter_sum(const Container& c)
     {
-        return std::accumulate(std::begin(c), std::end(c), 0);
+        static constexpr typename Container::value_type init{};
+        return std::accumulate(std::begin(c), std::end(c), init);
     }
 }
